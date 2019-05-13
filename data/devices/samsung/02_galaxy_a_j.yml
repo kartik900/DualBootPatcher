@@ -677,3 +677,48 @@
     default_brightness: 162
     pixel_format: RGBX_8888
     theme: portrait_hdpi
+
+
+- name: SM-A510F
+  id: dot_a5xelte
+  codenames:
+    - a5xelte
+
+  architecture: armeabi-v7a
+
+  block_devs:
+    base_dirs:
+      - /dev/block/bootdevice/by-name
+    system:
+      - /dev/block/bootdevice/by-name/SYSTEM
+      - /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM
+      - /dev/block/mmcblk0p20
+    cache:
+      - /dev/block/bootdevice/by-name/CACHE
+      - /dev/block/platform/13540000.dwmmc0/by-name/CACHE
+      - /dev/block/mmcblk0p21
+    data:
+      - /dev/block/bootdevice/by-name/USERDATA
+      - /dev/block/platform/13540000.dwmmc0/by-name/USERDATA
+      - /dev/block/mmcblk0p23
+    boot:
+      - /dev/block/bootdevice/by-name/BOOT
+      - /dev/block/platform/13540000.dwmmc0/by-name/BOOT
+      - /dev/block/mmcblk0p10
+    recovery:
+      - /dev/block/bootdevice/RECOVERY
+      - /dev/block/platform/13540000.dwmmc0/by-name/RECOVERY
+      - /dev/block/mmcblk0p11
+
+
+  boot_ui:
+    supported: true
+    flags:
+      - TW_HAS_DOWNLOAD_MODE
+    graphics_backends:
+      - fbdev
+    brightness_path: /sys/devices/14800000.dsim/backlight/panel/brightness
+    max_brightness: 255
+    default_brightness: 162
+    pixel_format: BRGA_8888
+theme: portrait_hdpi
